@@ -14,8 +14,17 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class DDBlocks {
-	public static void init(Block crystalOre, Block rubyOre, Block sapphireOre,
-			Block crystalBlock, Block rubyBlock, Block sapphireBlock) {
+	
+	
+	private static Block crystalOre = Main.crystalOre;
+	private static Block rubyOre = Main.rubyOre;
+	private static Block sapphireOre = Main.sapphireOre;
+	private static Block crystalBlock = Main.crystalBlock;
+	private static Block rubyBlock = Main.rubyBlock;
+	private static Block sapphireBlock = Main.sapphireBlock;
+	
+	
+	public static void init() {
 		// define items/blocks
 		// ORES
 		crystalOre = new DDCrystalOre(3600, "crystalOre")
@@ -69,8 +78,7 @@ public class DDBlocks {
 		// crafting
 	}
 
-	public static void recipes(Item crystal, Item ruby, Item sapphire,
-			Block crystalBlock, Block rubyBlock, Block sapphireBlock) {
+	public static void recipes() {
 		GameRegistry.addRecipe(new ItemStack(crystalBlock, 1),
 				new Object[] { "TTT", "TTT", "TTT", 'T', crystal, });
 		GameRegistry.addRecipe(new ItemStack(rubyBlock, 1),
