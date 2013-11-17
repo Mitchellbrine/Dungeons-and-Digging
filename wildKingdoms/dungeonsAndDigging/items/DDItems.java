@@ -8,25 +8,33 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class DDItems {
-	public static void init(Item crystal, Item ruby, Item sapphire,
-			Block crystalOre, Block rubyOre, Block sapphireBlock) {
+
+		private static Item crystal = Main.crystal;
+		private static Item ruby = Main.ruby;
+		private static Item sapphire = Main.saphire;
+		
+		private static Block crystalBlock = MainMod.crystalBlock;
+		private static Block rubyBlock = MainMod.rubyBlock;
+		private static Block sapphireBlock = Main.sapphireBlock;
+
+
+	public static void init() {
 		// define items/blocks
 		crystal = new DDGemItems(3200).setUnlocalizedName("crystal")
 				.setTextureName("DungeonsAndDigging:crystal");
 		ruby = new DDGemItems(3201).setUnlocalizedName("ruby").setTextureName(
 				"DungeonsAndDigging:ruby");
-		ruby = new DDGemItems(3202).setUnlocalizedName("sapphire")
+		sapphire = new DDGemItems(3202).setUnlocalizedName("sapphire")
 				.setTextureName("DungeonsAndDigging:sapphire");
 
 		// adding names
 		LanguageRegistry.addName(crystal, "Crystal");
 		LanguageRegistry.addName(ruby, "Ruby");
-		LanguageRegistry.addName(ruby, "Sapphire");
+		LanguageRegistry.addName(sapphire, "Sapphire");
 
 	}
 
-	public static void recipes(Item crystal, Item ruby, Item sapphire,
-			Block crystalBlock, Block rubyBlock, Block sapphireBlock) {
+	public static void recipes() {
 		GameRegistry.addShapelessRecipe(new ItemStack(crystal, 9),
 				new Object[] { crystalBlock });
 		GameRegistry.addShapelessRecipe(new ItemStack(ruby, 9),
